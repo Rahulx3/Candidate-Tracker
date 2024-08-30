@@ -1,0 +1,38 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Add Candidate</h2>
+      <form #candidateForm="ngForm" (ngSubmit)="onSubmit(candidateForm)">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input id="name" name="name" [(ngModel)]="candidate.name" required>
+        </div>
+        <div class="form-group">
+          <label for="coreSkill">Core Skill:</label>
+          <select id="coreSkill" name="coreSkill" [(ngModel)]="candidate.coreSkill" required>
+            <option value="">Select Skill</option>
+            <option value="Full-Stack">Full Stack</option>
+            <option value="Power-Bi">Power Bi</option>
+            <option value="UI-UX">UI/UX</option>
+            <option value="Data-Engineering">Data Engineering</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="experience">Experience:</label>
+          <input id="experience" name="experience" type="number" [(ngModel)]="candidate.experience" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" [(ngModel)]="candidate.gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+    
+        <button type="submit" [disabled]="!candidateForm.form.valid">Submit</button>
+        <button type="button" (click)="closeModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  

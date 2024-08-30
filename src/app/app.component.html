@@ -1,0 +1,4 @@
+<app-headers (openModal)="toggleModal()"></app-headers>
+<router-outlet></router-outlet>
+<app-add-candidate *ngIf="showModal" (close)="closeModal()"></app-add-candidate>
+<app-footer></app-footer>

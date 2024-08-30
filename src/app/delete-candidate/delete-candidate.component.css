@@ -1,0 +1,53 @@
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure overlay is above other content */
+  }
+  
+  /* Delete dialog styles */
+  .delete-dialog {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Button group styles */
+  .button-group {
+    margin-top: 20px;
+  }
+  
+  .button-group button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .button-group button:hover {
+    background-color: #0056b3;
+  }
+  
+  .button-group button.cancel {
+    background-color: #6c757d;
+  }
+  
+  .button-group button.cancel:hover {
+    background-color: #5a6268;
+  }
+  

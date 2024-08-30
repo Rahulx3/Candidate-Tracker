@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #333; 
+    color: #fff; /* White text */
+    padding: 10px 0; 
+}
+
+.container {
+    width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+/* Logo styling */
+.logo {
+    width: 50px; /* Set a fixed height for the logo */
+}
+
+.add-btn {
+    background-color: #007bff; /* Blue color for the button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-btn i {
+    margin-left: 5px; /* Space between icon and text */
+}
+
+.add-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}

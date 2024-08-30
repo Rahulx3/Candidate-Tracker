@@ -1,0 +1,54 @@
+/* Container to hold the two sections side by side */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two sections */
+    padding: 20px;
+  }
+  
+  /* Styling for the candidate details section */
+  .details-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the feedback section */
+  .feedback-section {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Paragraph styles */
+  p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Bold text for labels */
+  strong {
+    font-weight: 600;
+  }
+  
+  /* Optional: Add responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+  

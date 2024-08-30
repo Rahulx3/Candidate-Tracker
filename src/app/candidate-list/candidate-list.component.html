@@ -1,0 +1,21 @@
+<div class="candidate-container">
+    <div class="candidate-list">
+        <div *ngFor="let candidate of candidates" class="candidate-card">
+            <button class="edit-btn" (click)="editCandidate(candidate)">
+                <i class="fas fa-edit"></i> <!-- Font Awesome edit icon -->
+            </button>
+            <button class="delete-btn" (click)="deleteCandidate(candidate)">
+                <i class="fas fa-trash-alt"></i> <!-- Font Awesome trash icon -->
+            </button>
+            <h3>{{ candidate.name }}</h3>
+            <p><strong>Core Skill:</strong> {{ candidate.coreSkill }}</p>
+            <p><strong>Experience:</strong> {{ candidate.experience }} years</p>
+            <p><strong>Status:</strong> {{ candidate.status }}</p>
+            <div class="button-group">
+              
+                <button (click)="viewDetails(candidate)"   class="view-details-btn">View Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+
