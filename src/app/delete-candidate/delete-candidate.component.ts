@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-delete-candidate',
@@ -9,22 +9,18 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./delete-candidate.component.css']
 })
 export class DeleteCandidateComponent {
-  @Output() confirm = new EventEmitter<void>();
+  @Input() candidateId:number;
+  @Output() confirmDelete = new EventEmitter<number>();
   @Output() cancel = new EventEmitter<void>();
-  
-  showOverlay = true; // Show the overlay by default
 
-  onConfirm() {
-    this.confirm.emit(); // Emit confirm event
-    this.hideOverlay();
+  confirmDeleteAction() {
+    this.confirmDelete.emit(this.candidateId); 
+  }
+  cancelAction() {
+    this.cancel.emit();
   }
 
-  onCancel() {
-    this.cancel.emit(); // Emit cancel event
-    this.hideOverlay();
-  }
+ 
 
-  private hideOverlay() {
-    this.showOverlay = false; // Hide the overlay
-  }
+
 }

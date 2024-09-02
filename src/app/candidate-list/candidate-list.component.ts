@@ -16,6 +16,8 @@ export class CandidateListComponent implements OnInit {
   public router = inject(Router);
   private candidateService = inject(CandidateService); // Inject the service
   candidates: Candidate[] = []; // Use the Candidate interface
+  deleteModal:boolean=false;
+  selectedCandidateId:number|null;
 
   constructor() {}
 
@@ -28,13 +30,23 @@ export class CandidateListComponent implements OnInit {
     // Implement edit logic here
   }
 
-  deleteCandidate(candidate: Candidate) {
-    this.router.navigate([`/candidates/${candidate.candidateId}/delete`]);
-    
+  deleteCandidate(candidateId:number) {
+    this.deleteModal=true;
+    this.selectedCandidateId= candidateId;
   }
 
   viewDetails(candidate: Candidate) {
     this.router.navigate([`/candidates/${candidate.candidateId}`]);
+  }
+  deleteCandidateById(candidateId: number | null) {
+    if (candidateId !== null) {
+      this.candidates = this.candidates.filter(candidate => candidate.candidateId !== candidateId);
+    }
+    this.deleteModal = false;
+  }
+  handleCancel() {
+    this.deleteModal = false;
+    this.selectedCandidateId = null;
   }
 }
 

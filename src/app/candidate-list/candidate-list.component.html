@@ -4,7 +4,7 @@
             <button class="edit-btn" (click)="editCandidate(candidate)">
                 <i class="fas fa-edit"></i> <!-- Font Awesome edit icon -->
             </button>
-            <button class="delete-btn" (click)="deleteCandidate(candidate)">
+            <button class="delete-btn" (click)="deleteCandidate(candidate.candidateId)">
                 <i class="fas fa-trash-alt"></i> <!-- Font Awesome trash icon -->
             </button>
             <h3>{{ candidate.name }}</h3>
@@ -12,10 +12,16 @@
             <p><strong>Experience:</strong> {{ candidate.experience }} years</p>
             <p><strong>Status:</strong> {{ candidate.status }}</p>
             <div class="button-group">
-              
-                <button (click)="viewDetails(candidate)"   class="view-details-btn">View Details</button>
+                <button (click)="viewDetails(candidate)" class="view-details-btn">View Details</button>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Make sure the event name matches the one defined in DeleteCandidateComponent -->
+<app-delete-candidate 
+    *ngIf="deleteModal" 
+    [candidateId]="selectedCandidateId" 
+    (confirmDelete)="deleteCandidateById($event)"
+    (cancel)="handleCancel()">
+</app-delete-candidate>
